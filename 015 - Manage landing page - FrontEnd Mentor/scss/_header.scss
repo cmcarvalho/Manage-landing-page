@@ -1,2 +1,78 @@
 .header {
+  // Hamburger Open Styles
+  &.open {
+    .overlay {
+      display: block;
+      animation: fade-in 300ms ease-in-out forwards;
+    }
+
+    .header__menu {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 4.25rem;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: linear-gradient(transparent, $darkBlue);
+  }
+
+  nav {
+    padding: 20px;
+  }
+  &__logo {
+    img {
+      margin: 0px;
+    }
+  }
+
+  &__menu {
+    > span {
+      display: block;
+      width: 23px;
+      height: 3px;
+      background-color: $darkBlue;
+      margin-bottom: 3px;
+
+      transition: all 300ms ease-in-out;
+      transform-origin: 3px 1px;
+
+      &:first-child {
+        margin-top: 0px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__links {
+    a {
+      color: $darkBlue;
+      font-size: $font-sm;
+      font-weight: 700;
+      transition: color 200ms ease-in-out;
+
+      &:hover {
+        color: $darkGrayishBlue;
+      }
+
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+    }
+  }
 }
