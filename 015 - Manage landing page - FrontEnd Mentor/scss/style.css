@@ -1,5 +1,10 @@
 @-webkit-keyframes fade-in {
   from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
     opacity: 0;
   }
   to {
@@ -9,6 +14,11 @@
 
 @keyframes fade-in {
   from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
     opacity: 0;
   }
   to {
@@ -23,18 +33,30 @@
 
 @-webkit-keyframes fade-out {
   from {
+    visibility: visible;
     opacity: 1;
   }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
   to {
+    visibility: hidden;
     opacity: 0;
   }
 }
 
 @keyframes fade-out {
   from {
+    visibility: visible;
     opacity: 1;
   }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
   to {
+    visibility: hidden;
     opacity: 0;
   }
 }
@@ -79,6 +101,11 @@ a,
 a:visited,
 a:hover {
   text-decoration: none;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .flex {
@@ -138,32 +165,26 @@ button:hover,
   }
 }
 
-.container {
-  margin: 100px;
-  padding: 200px;
+.container01 {
   background-color: #882828;
 }
 
-.header.open .overlay {
-  display: block;
-}
-
-.header.open .header__menu > span:first-child {
+.header.open .header__toggle > span:first-child {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-.header.open .header__menu > span:nth-child(2) {
+.header.open .header__toggle > span:nth-child(2) {
   opacity: 0;
 }
 
-.header.open .header__menu > span:last-child {
+.header.open .header__toggle > span:last-child {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
 
 .header .overlay {
-  display: none;
+  opacity: 0;
   position: fixed;
   top: 4.25rem;
   right: 0px;
@@ -174,14 +195,15 @@ button:hover,
 }
 
 .header nav {
-  padding: 20px;
+  padding-top: 1.0625rem;
+  padding-bottom: 1.0625rem;
 }
 
 .header__logo img {
   margin: 0px;
 }
 
-.header__menu > span {
+.header__toggle > span {
   display: block;
   width: 23px;
   height: 3px;
@@ -193,12 +215,30 @@ button:hover,
           transform-origin: 3px 1px;
 }
 
-.header__menu > span:first-child {
+.header__toggle > span:first-child {
   margin-top: 0px;
 }
 
-.header__menu > span:last-child {
+.header__toggle > span:last-child {
   margin-bottom: 0;
+}
+
+.header__menu {
+  position: absolute;
+  width: calc(100% - 3rem);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: white;
+  padding: 1.625rem;
+  border-radius: 3px;
+}
+
+.header__menu a {
+  display: block;
+  padding: 0.625rem;
+  color: #242d52;
+  text-align: center;
 }
 
 .header__links a {

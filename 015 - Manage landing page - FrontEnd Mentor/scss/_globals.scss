@@ -33,6 +33,12 @@ a:hover {
   text-decoration: none;
 }
 
+//Spacing
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 // Flexbox styles
 
 .flex {
@@ -88,8 +94,6 @@ button,
 // MY OWN CODE BY CRISTIANO CARVALHO MACHADO
 // -----------------------------------------
 
-.container {
-  margin: 100px;
-  padding: 200px;
+.container01 {
   background-color: rgb(136, 40, 40);
 }
